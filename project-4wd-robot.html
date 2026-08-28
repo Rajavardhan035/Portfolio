@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Home Assistant Robot | Project Details</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #0C0C0C !important;
+            color: #f8fafc;
+            transition: background-color 0.4s ease, color 0.4s ease;
+            overflow-x: hidden;
+        }
+        .dark body {
+            background-color: #0C0C0C;
+            color: #f8fafc;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            border: 1px solid rgba(226, 232, 240, 0.9);
+            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+            backdrop-filter: blur(16px);
+        }
+        .dark .glass-card {
+            background: rgba(15, 23, 42, 0.85);
+            border: 1px solid rgba(245, 158, 11, 0.25);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+        }
+        .glow-blob {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(120px);
+            pointer-events: none;
+            z-index: -2;
+            opacity: 0.15;
+        }
+        .dark .glow-blob { opacity: 0.25; }
+        .blob-1 { width: 400px; height: 400px; background: #f59e0b; top: -50px; left: -50px; }
+        .blob-2 { width: 350px; height: 350px; background: #38bdf8; bottom: 50px; right: -50px; }
+    </style>
+</head>
+<body class="font-sans antialiased min-h-screen py-10 px-4">
+    <div class="glow-blob blob-1"></div>
+    <div class="glow-blob blob-2"></div>
+
+    <div class="max-w-4xl mx-auto">
+        <!-- Navigation Header -->
+        <div class="mb-8 flex items-center justify-between">
+            <a href="index.html#projects" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full glass-card hover:border-amber-500 text-amber-600 dark:text-amber-300 font-semibold text-sm transition-all shadow-md">
+                ← Back to Portfolio
+            </a>
+            <a href="https://github.com/Rajavardhan035" target="_blank" class="px-5 py-2.5 rounded-full bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-sm transition-all shadow-lg shadow-amber-500/20">
+                GitHub Repository ↗
+            </a>
+        </div>
+
+        <!-- Project Hero Card -->
+        <div class="glass-card rounded-3xl overflow-hidden p-6 sm:p-10 mb-8">
+            <div class="flex flex-wrap items-center gap-3 mb-4">
+                <span class="px-3.5 py-1 rounded-full text-xs font-bold bg-amber-100 dark:bg-amber-500/20 text-amber-800 dark:text-amber-300 border border-amber-300 dark:border-amber-500/30">Robotics & Hardware</span>
+                <span class="px-3.5 py-1 rounded-full text-xs font-bold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Raspberry Pi</span>
+            </div>
+
+            <h1 class="font-heading text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-slate-100 mb-4">
+                Smart Home Assistant Robot (4WD)
+            </h1>
+
+            <p class="text-base sm:text-lg text-slate-700 dark:text-slate-300 leading-relaxed mb-8">
+                A custom-built 4-wheel-drive (4WD) robotic platform controlled by a Raspberry Pi single-board computer. Integrated with ultrasonic distance sensors, L298N motor drivers, and Python GPIO control scripts for real-time indoor navigation and obstacle avoidance.
+            </p>
+
+            <!-- Featured Image Gallery Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                <div class="rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-2xl group cursor-pointer" onclick="openModal('robot.png')">
+                    <img src="robot.png" alt="Smart 4WD Robot Model" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500" />
+                </div>
+                <div class="rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-2xl group cursor-pointer" onclick="openModal('robo.jpg')">
+                    <img src="robo.jpg" alt="Robot Chassis & Wiring" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500" />
+                </div>
+            </div>
+
+            <!-- Tech Stack Badges -->
+            <div class="mb-8">
+                <h2 class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-3">Hardware & Tech Stack</h2>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-amber-700 dark:text-amber-300 shadow-sm">Raspberry Pi 4</span>
+                    <span class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-amber-700 dark:text-amber-300 shadow-sm">Python RPi.GPIO</span>
+                    <span class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-amber-700 dark:text-amber-300 shadow-sm">HC-SR04 Ultrasonic Sensor</span>
+                    <span class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-amber-700 dark:text-amber-300 shadow-sm">L298N Motor Driver</span>
+                </div>
+            </div>
+
+            <!-- Project Breakdown -->
+            <div class="space-y-8 text-slate-700 dark:text-slate-300 border-t border-slate-200 dark:border-slate-800 pt-8">
+                <div>
+                    <h2 class="font-heading text-xl sm:text-2xl font-bold text-slate-900 dark:text-slate-100 mb-3">Key Features</h2>
+                    <ul class="space-y-2 text-sm sm:text-base list-disc list-inside text-slate-700 dark:text-slate-300">
+                        <li><strong class="text-amber-600 dark:text-amber-300">Autonomous Obstacle Avoidance:</strong> Continuous ultrasonic ping loops measure forward clearances and steer the robot away from walls.</li>
+                        <li><strong class="text-amber-600 dark:text-amber-300">PWM Motor Speed Control:</strong> Pulse Width Modulation controls individual wheel speeds for smooth turn arcs.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Next / Previous Project Navigation -->
+        <div class="flex items-center justify-between gap-4">
+            <a href="project-ai-assistant.html" class="inline-flex items-center gap-2 px-6 py-3 rounded-full glass-card hover:border-amber-500 text-amber-600 dark:text-amber-300 font-bold text-sm transition-all">
+                ← Previous: AI Assistant
+            </a>
+            <a href="project-smart-waste.html" class="inline-flex items-center gap-2 px-6 py-3 rounded-full glass-card hover:border-amber-500 text-amber-600 dark:text-amber-300 font-bold text-sm transition-all">
+                Next: Smart Waste →
+            </a>
+        </div>
+    </div>
+
+    <!-- Image Lightbox Modal -->
+    <div id="imageModal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-xl flex items-center justify-center p-4 hidden" onclick="closeModal()">
+        <img id="modalImg" src="" alt="Enlarged Project Preview" class="max-w-full max-h-[90vh] rounded-2xl object-contain shadow-2xl" />
+    </div>
+
+    <script>
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme === "dark") {
+            document.documentElement.classList.add("dark");
+        } else {
+            document.documentElement.classList.remove("dark");
+        }
+
+        function openModal(src) {
+            document.getElementById('modalImg').src = src;
+            document.getElementById('imageModal').classList.remove('hidden');
+        }
+        function closeModal() {
+            document.getElementById('imageModal').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>

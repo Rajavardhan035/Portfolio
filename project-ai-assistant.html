@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Desktop AI Voice Assistant | Project Details</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #0C0C0C !important;
+            color: #f8fafc;
+            transition: background-color 0.4s ease, color 0.4s ease;
+            overflow-x: hidden;
+        }
+        .dark body {
+            background-color: #0C0C0C;
+            color: #f8fafc;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            border: 1px solid rgba(226, 232, 240, 0.9);
+            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+            backdrop-filter: blur(16px);
+        }
+        .dark .glass-card {
+            background: rgba(15, 23, 42, 0.85);
+            border: 1px solid rgba(56, 189, 248, 0.25);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+        }
+        .glow-blob {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(120px);
+            pointer-events: none;
+            z-index: -2;
+            opacity: 0.15;
+        }
+        .dark .glow-blob { opacity: 0.25; }
+        .blob-1 { width: 400px; height: 400px; background: #38bdf8; top: -50px; left: -50px; }
+        .blob-2 { width: 350px; height: 350px; background: #a855f7; bottom: 50px; right: -50px; }
+    </style>
+</head>
+<body class="font-sans antialiased min-h-screen py-10 px-4">
+    <div class="glow-blob blob-1"></div>
+    <div class="glow-blob blob-2"></div>
+
+    <div class="max-w-4xl mx-auto">
+        <!-- Navigation Header -->
+        <div class="mb-8 flex items-center justify-between">
+            <a href="index.html#projects" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full glass-card hover:border-sky-500 text-sky-600 dark:text-sky-300 font-semibold text-sm transition-all shadow-md">
+                ← Back to Portfolio
+            </a>
+            <a href="https://github.com/Rajavardhan035" target="_blank" class="px-5 py-2.5 rounded-full bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold text-sm transition-all shadow-lg shadow-sky-500/20">
+                GitHub Repository ↗
+            </a>
+        </div>
+
+        <!-- Project Hero Card -->
+        <div class="glass-card rounded-3xl overflow-hidden p-6 sm:p-10 mb-8">
+            <div class="flex flex-wrap items-center gap-3 mb-4">
+                <span class="px-3.5 py-1 rounded-full text-xs font-bold bg-sky-100 dark:bg-sky-500/20 text-sky-800 dark:text-sky-300 border border-sky-300 dark:border-sky-500/30">AI & Speech Recognition</span>
+                <span class="px-3.5 py-1 rounded-full text-xs font-bold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Python 3.x</span>
+            </div>
+
+            <h1 class="font-heading text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-slate-100 mb-4">
+                Desktop AI Voice Assistant
+            </h1>
+
+            <p class="text-base sm:text-lg text-slate-700 dark:text-slate-300 leading-relaxed mb-8">
+                A hands-free, intelligent desktop assistant built in Python that responds to spoken voice commands. It automates local application launches, fetches live search results, controls multimedia playback, and synthesizes natural voice responses.
+            </p>
+
+            <!-- Featured Image -->
+            <div class="rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-2xl mb-8 group cursor-pointer" onclick="openModal('ai assistant.jpg')">
+                <img src="ai assistant.jpg" alt="Desktop AI Assistant Interface" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500" />
+            </div>
+
+            <!-- Tech Stack Badges -->
+            <div class="mb-8">
+                <h2 class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-3">Technologies & Libraries Used</h2>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-sky-700 dark:text-sky-300 shadow-sm">Python</span>
+                    <span class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-sky-700 dark:text-sky-300 shadow-sm">SpeechRecognition</span>
+                    <span class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-sky-700 dark:text-sky-300 shadow-sm">pyttsx3 (TTS)</span>
+                    <span class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-sky-700 dark:text-sky-300 shadow-sm">PyAudio</span>
+                    <span class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-sky-700 dark:text-sky-300 shadow-sm">OS & Subprocess</span>
+                </div>
+            </div>
+
+            <!-- Project Breakdown -->
+            <div class="space-y-8 text-slate-700 dark:text-slate-300 border-t border-slate-200 dark:border-slate-800 pt-8">
+                <div>
+                    <h2 class="font-heading text-xl sm:text-2xl font-bold text-slate-900 dark:text-slate-100 mb-3">Key Features</h2>
+                    <ul class="space-y-2 text-sm sm:text-base list-disc list-inside text-slate-700 dark:text-slate-300">
+                        <li><strong class="text-sky-600 dark:text-sky-300">Offline Speech Synthesis:</strong> Uses `pyttsx3` for instant, latency-free text-to-speech audio feedback.</li>
+                        <li><strong class="text-sky-600 dark:text-sky-300">Voice Command Parsing:</strong> Captures audio input via microphone using Google Speech API integration.</li>
+                        <li><strong class="text-sky-600 dark:text-sky-300">App & System Automation:</strong> Launches Notepad, Chrome, Calculator, VS Code, and system utilities on command.</li>
+                        <li><strong class="text-sky-600 dark:text-sky-300">Web Querying:</strong> Performs instant Wikipedia summaries, YouTube video plays, and Google searches.</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h2 class="font-heading text-xl sm:text-2xl font-bold text-slate-900 dark:text-slate-100 mb-3">System Architecture</h2>
+                    <p class="text-sm sm:text-base leading-relaxed mb-4">
+                        The architecture operates on an event-driven loop. The microphone listener captures acoustic waves, converts them into text strings via `SpeechRecognition`, parses command intents using keyword routing, triggers target system calls, and speaks back status notifications.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Next / Previous Project Navigation -->
+        <div class="flex items-center justify-between gap-4">
+            <div></div>
+            <a href="project-4wd-robot.html" class="inline-flex items-center gap-2 px-6 py-3 rounded-full glass-card hover:border-sky-500 text-sky-600 dark:text-sky-300 font-bold text-sm transition-all">
+                Next: 4WD Robot →
+            </a>
+        </div>
+    </div>
+
+    <!-- Image Lightbox Modal -->
+    <div id="imageModal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-xl flex items-center justify-center p-4 hidden" onclick="closeModal()">
+        <img id="modalImg" src="" alt="Enlarged Project Preview" class="max-w-full max-h-[90vh] rounded-2xl object-contain shadow-2xl" />
+    </div>
+
+    <script>
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme === "dark") {
+            document.documentElement.classList.add("dark");
+        } else {
+            document.documentElement.classList.remove("dark");
+        }
+
+        function openModal(src) {
+            document.getElementById('modalImg').src = src;
+            document.getElementById('imageModal').classList.remove('hidden');
+        }
+        function closeModal() {
+            document.getElementById('imageModal').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
